@@ -3,8 +3,8 @@
 
 Resort Website Using HTML, CSS, JavaScript, PHP And MySQL
 
-SETUP GUIDE
------------
+SETUP GUIDE (Linux)
+-------------------
 
  1. AFTER INSTALLATION, RUN THE BELOW COMMAND IN TERMINAL TO SET READ, WRITE, AND EXECUTE PERMISSIONS
 
