@@ -35,23 +35,16 @@
                             <select id="rooms" name="rooms" onchange="price(6730,3365,1680);setList(0);">
                             <?php
                                 $qry="SELECT rno FROM standard_room WHERE fn IS NULL";
-                                $con=mysqli_connect("localhost","root","Abhi7674");
                                 $lcv=1;
-                                if(!$con)
+                                include '../database.php';
+                                mysqli_select_db($con,"PROJECT");
+                                $result = mysqli_query($con,$qry);
+                                while($tabledata=mysqli_fetch_row($result) && $lcv<5)
                                 {
-                                    die("Connection Error");
+                                    echo "<option value='$lcv'>$lcv</option>";
+                                    $lcv++;
                                 }
-                                else
-                                {
-                                    mysqli_select_db($con,"PROJECT");
-                                    $result = mysqli_query($con,$qry);
-                                    while($tabledata=mysqli_fetch_row($result) && $lcv<5)
-                                    {
-                                        echo "<option value='$lcv'>$lcv</option>";
-                                        $lcv++;
-                                    }
-                                    mysqli_close($con);
-                                }
+                                mysqli_close($con);
                             ?>
                             </select>
                         </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,28 +75,21 @@
                         </label><br><br>
                         <?php
                             $qry="SELECT rno FROM standard_room WHERE fn IS NULL";
-                            $con=mysqli_connect("localhost","root","Abhi7674");
                             $lcv=0;
-                            if(!$con)
+                            include '../database.php';
+                            mysqli_select_db($con,"PROJECT");
+                            $result1 = mysqli_query($con,$qry);
+                            echo "<h2 class='ml140'>Select Your Room Number<h2></h2>
+                            <div class='ml100 pl20'>";
+                            echo "<label>&nbsp;Room
+                            <select id='room1' name='room1' onchange='setList(1)'>";
+                            while($tabledata=mysqli_fetch_row($result1))
                             {
-                                die("Connection Error");
+                                echo "<option value='$tabledata[0]'>$tabledata[0]</option>";
                             }
-                            else
-                            {
-                                mysqli_select_db($con,"PROJECT");
-                                $result1 = mysqli_query($con,$qry);
-                                echo "<h2 class='ml140'>Select Your Room Number<h2></h2>
-                                <div class='ml100 pl20'>";
-                                echo "<label>&nbsp;Room
-                                <select id='room1' name='room1' onchange='setList(1)'>";
-                                while($tabledata=mysqli_fetch_row($result1))
-                                {
-                                    echo "<option value='$tabledata[0]'>$tabledata[0]</option>";
-                                }
-                                echo "</select>
-                                </label>";
-                                mysqli_close($con);
-                            }
+                            echo "</select>
+                            </label>";
+                            mysqli_close($con);
                         ?>
                         <label>&nbsp;Room
                             <select id="room2" name="room2" onchange="setList(2)"></select>

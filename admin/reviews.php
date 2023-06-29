@@ -80,29 +80,22 @@
                 <br><br>
                 <?php
                     $qry="SELECT * FROM reviews";
-                    $con=mysqli_connect("localhost","root","Abhi7674");
-                    if(!$con)
+                    include '../database.php';
+                    mysqli_select_db($con,"PROJECT");
+                    $result = mysqli_query($con,$qry);
+                    while($tabledata=mysqli_fetch_row($result))
                     {
-                        die("Connection Error");
+                        echo "<span class='spanset2'>
+                            <h3>\"$tabledata[3]\"</h3>
+                            <p>$tabledata[4]</p>
+                            <p>$tabledata[0] from $tabledata[2]<br>
+                            $tabledata[1]<br>
+                            $tabledata[5]<br>
+                            </p>
+                        </span>
+                        <br><br>";
                     }
-                    else
-                    {
-                        mysqli_select_db($con,"PROJECT");
-                        $result = mysqli_query($con,$qry);
-                        while($tabledata=mysqli_fetch_row($result))
-                        {
-                            echo "<span class='spanset2'>
-                                <h3>\"$tabledata[3]\"</h3>
-                                <p>$tabledata[4]</p>
-                                <p>$tabledata[0] from $tabledata[2]<br>
-                                $tabledata[1]<br>
-                                $tabledata[5]<br>
-                                </p>
-                            </span>
-                            <br><br>";
-                        }
-                        mysqli_close($con);
-                    }
+                    mysqli_close($con);
                     ?>
             </div>
         </div>

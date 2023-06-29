@@ -16,11 +16,7 @@
             if($_POST['room'])
             {
                 $room = $_POST['room'];
-                $con=mysqli_connect("localhost","root","Abhi7674");
-                if(!$con)
-                {
-                    die("Connection Error");
-                }
+                include '../../database.php';
                 mysqli_select_db($con,"PROJECT");
                 $result = mysqli_query($con,"UPDATE seaside_villa SET fn=NULL,ln=NULL,gender=NULL,pno=NULL,email=NULL,address=NULL,pin=NULL,adults=NULL,children=NULL,price=NULL WHERE rno='$room';");
                 mysqli_close($con);
@@ -37,46 +33,39 @@
                 <th>
                 <?php
                     $qry="SELECT * FROM seaside_villa";
-                    $con=mysqli_connect("localhost","root","Abhi7674");
-                    if(!$con)
+                    include '../../database.php';
+                    mysqli_select_db($con,"PROJECT");
+                    $result = mysqli_query($con,$qry);
+                    echo "<table border='5' cellpadding='15' cellspacing='5'>
+                    <tr>
+                        <th>ROOM NO</th>
+                        <th>NAME</th>
+                        <th>GENDER</th>
+                        <th>PHONE</th>
+                        <th>EMAIL</th>
+                        <th>ADDRESS</th>
+                        <th>PIN CODE</th>
+                        <th>ADULTS</th>
+                        <th>CHILDREN</th>
+                        <th>PRICE</th>
+                    </tr>";
+                    while($tabledata=mysqli_fetch_row($result))
                     {
-                        die("Connection Error");
-                    }
-                    else
-                    {
-                        mysqli_select_db($con,"PROJECT");
-                        $result = mysqli_query($con,$qry);
-                        echo "<table border='5' cellpadding='15' cellspacing='5'>
-                        <tr>
-                            <th>ROOM NO</th>
-                            <th>NAME</th>
-                            <th>GENDER</th>
-                            <th>PHONE</th>
-                            <th>EMAIL</th>
-                            <th>ADDRESS</th>
-                            <th>PIN CODE</th>
-                            <th>ADULTS</th>
-                            <th>CHILDREN</th>
-                            <th>PRICE</th>
+                        echo "<tr>
+                        <td>$tabledata[0]</td>
+                        <td>$tabledata[1] $tabledata[2]</td>
+                        <td>$tabledata[3]</td>
+                        <td>$tabledata[4]</td>
+                        <td>$tabledata[5]</td>
+                        <td>$tabledata[6]</td>
+                        <td>$tabledata[7]</td>
+                        <td>$tabledata[8]</td>
+                        <td>$tabledata[9]</td>
+                        <td>$tabledata[10]</td>
                         </tr>";
-                        while($tabledata=mysqli_fetch_row($result))
-                        {
-                            echo "<tr>
-                            <td>$tabledata[0]</td>
-                            <td>$tabledata[1] $tabledata[2]</td>
-                            <td>$tabledata[3]</td>
-                            <td>$tabledata[4]</td>
-                            <td>$tabledata[5]</td>
-                            <td>$tabledata[6]</td>
-                            <td>$tabledata[7]</td>
-                            <td>$tabledata[8]</td>
-                            <td>$tabledata[9]</td>
-                            <td>$tabledata[10]</td>
-                            </tr>";
-                        }
-                        echo "</table>";
-                        mysqli_close($con);
                     }
+                    echo "</table>";
+                    mysqli_close($con);
                 ?>
                 </th>
                 <th style="padding-left: 220px;">
@@ -84,27 +73,20 @@
                     <form action="" method="post">
                     <?php
                         $qry="SELECT rno FROM seaside_villa WHERE fn IS NOT NULL";
-                        $con=mysqli_connect("localhost","root","Abhi7674");
                         $lcv=0;
-                        if(!$con)
+                        include '../../database.php';
+                        mysqli_select_db($con,"PROJECT");
+                        $result = mysqli_query($con,$qry);
+                        echo "<h3>Select Room Number</h3>";
+                        echo "<label>&nbsp;Room Number
+                        <select id='room' name='room'>";
+                        while($tabledata=mysqli_fetch_row($result))
                         {
-                            die("Connection Error");
+                            echo "<option value='$tabledata[0]'>$tabledata[0]</option>";
                         }
-                        else
-                        {
-                            mysqli_select_db($con,"PROJECT");
-                            $result = mysqli_query($con,$qry);
-                            echo "<h3>Select Room Number</h3>";
-                            echo "<label>&nbsp;Room Number
-                            <select id='room' name='room'>";
-                            while($tabledata=mysqli_fetch_row($result))
-                            {
-                                echo "<option value='$tabledata[0]'>$tabledata[0]</option>";
-                            }
-                            echo "</select>
-                            </label>";
-                            mysqli_close($con);
-                        }
+                        echo "</select>
+                        </label>";
+                        mysqli_close($con);
                     ?>
                     <input type="submit" class="ml20" name="vacate" value="VACATE">
                     </form>

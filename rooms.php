@@ -32,32 +32,24 @@
                             </ul>
                             <?php
                                 $qry="SELECT rno FROM seaside_villa WHERE fn IS NULL";
-                                $con=mysqli_connect("localhost","root","Abhi7674");
-                                $lcv=0;
-                                if(!$con)
+                                include 'database.php';
+                                mysqli_select_db($con,"PROJECT");
+                                $result = mysqli_query($con,$qry);
+                                while($tabledata=mysqli_fetch_row($result))
                                 {
-                                    die("Connection Error");
+                                    $lcv++;
+                                }
+                                mysqli_close($con);
+                                if($lcv!=0)
+                                {
+                                    echo "<br><form action='./rooms/seaside_villa.php' method='post' class='inline'>
+                                        <input type='submit' class='ml20' value='See Prices'>
+                                    </form>";
                                 }
                                 else
                                 {
-                                    mysqli_select_db($con,"PROJECT");
-                                    $result = mysqli_query($con,$qry);
-                                    while($tabledata=mysqli_fetch_row($result))
-                                    {
-                                        $lcv++;
-                                    }
-                                    mysqli_close($con);
-                                    if($lcv!=0)
-                                    {
-                                        echo "<br><form action='./rooms/seaside_villa.php' method='post' class='inline'>
-                                            <input type='submit' class='ml20' value='See Prices'>
-                                        </form>";
-                                    }
-                                    else
-                                    {
-                                        echo "<button class='ml20'>See Prices</button>
-                                        <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
-                                    }
+                                    echo "<button class='ml20'>See Prices</button>
+                                    <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
                                 }
                             ?>
                         </div>
@@ -73,33 +65,25 @@
                             </ul>
                             <?php
                                 $qry="SELECT rno FROM garden_view_room WHERE fn IS NULL";
-                                $con=mysqli_connect("localhost","root","Abhi7674");
-                                $lcv=0;
-                                if(!$con)
+                                include 'database.php';
+                                mysqli_select_db($con,"PROJECT");
+                                $result = mysqli_query($con,$qry);
+                                while($tabledata=mysqli_fetch_row($result))
                                 {
-                                    die("Connection Error");
+                                    $lcv++;
+                                }
+                                mysqli_close($con);
+                                if($lcv!=0)
+                                {
+                                    echo "<form action='./rooms/garden_view_room.php' method='post' class='inline'>
+                                        <input type='submit' class='ml20' value='See Prices'>
+                                    </form>
+                                    <h6 id='noti2' class='inline' style='padding-left:5px;'>from Rs.5,480</h6>";
                                 }
                                 else
                                 {
-                                    mysqli_select_db($con,"PROJECT");
-                                    $result = mysqli_query($con,$qry);
-                                    while($tabledata=mysqli_fetch_row($result))
-                                    {
-                                        $lcv++;
-                                    }
-                                    mysqli_close($con);
-                                    if($lcv!=0)
-                                    {
-                                        echo "<form action='./rooms/garden_view_room.php' method='post' class='inline'>
-                                            <input type='submit' class='ml20' value='See Prices'>
-                                        </form>
-                                        <h6 id='noti2' class='inline' style='padding-left:5px;'>from Rs.5,480</h6>";
-                                    }
-                                    else
-                                    {
-                                        echo "<button class='ml20'>See Prices</button>
-                                        <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
-                                    }
+                                    echo "<button class='ml20'>See Prices</button>
+                                    <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
                                 }
                             ?>
                         </div>
@@ -117,32 +101,24 @@
                             </ul>
                             <?php
                                 $qry="SELECT rno FROM deluxe_double_room WHERE fn IS NULL";
-                                $con=mysqli_connect("localhost","root","Abhi7674");
-                                $lcv=0;
-                                if(!$con)
+                                include 'database.php';
+                                mysqli_select_db($con,"PROJECT");
+                                $result = mysqli_query($con,$qry);
+                                while($tabledata=mysqli_fetch_row($result))
                                 {
-                                    die("Connection Error");
+                                    $lcv++;
+                                }
+                                mysqli_close($con);
+                                if($lcv!=0)
+                                {
+                                    echo "<br><form action='./rooms/deluxe_double_room.php' method='post' class='inline'>
+                                        <input type='submit' class='ml20' value='See Prices'>
+                                    </form>";
                                 }
                                 else
                                 {
-                                    mysqli_select_db($con,"PROJECT");
-                                    $result = mysqli_query($con,$qry);
-                                    while($tabledata=mysqli_fetch_row($result))
-                                    {
-                                        $lcv++;
-                                    }
-                                    mysqli_close($con);
-                                    if($lcv!=0)
-                                    {
-                                        echo "<br><form action='./rooms/deluxe_double_room.php' method='post' class='inline'>
-                                            <input type='submit' class='ml20' value='See Prices'>
-                                        </form>";
-                                    }
-                                    else
-                                    {
-                                        echo "<button class='ml20'>See Prices</button>
-                                        <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
-                                    }
+                                    echo "<button class='ml20'>See Prices</button>
+                                    <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
                                 }
                             ?>
                         </div>
@@ -156,32 +132,24 @@
                             </ul><br><br><br><br>
                             <?php
                                 $qry="SELECT rno FROM standard_room WHERE fn IS NULL";
-                                $con=mysqli_connect("localhost","root","Abhi7674");
-                                $lcv=0;
-                                if(!$con)
+                                include 'database.php';
+                                mysqli_select_db($con,"PROJECT");
+                                $result = mysqli_query($con,$qry);
+                                while($tabledata=mysqli_fetch_row($result))
                                 {
-                                    die("Connection Error");
+                                    $lcv++;
+                                }
+                                mysqli_close($con);
+                                if($lcv!=0)
+                                {
+                                    echo "<br><form action='./rooms/standard_room.php' method='post' class='inline'>
+                                        <input type='submit' class='ml20' value='See Prices'>
+                                    </form>";
                                 }
                                 else
                                 {
-                                    mysqli_select_db($con,"PROJECT");
-                                    $result = mysqli_query($con,$qry);
-                                    while($tabledata=mysqli_fetch_row($result))
-                                    {
-                                        $lcv++;
-                                    }
-                                    mysqli_close($con);
-                                    if($lcv!=0)
-                                    {
-                                        echo "<br><form action='./rooms/standard_room.php' method='post' class='inline'>
-                                            <input type='submit' class='ml20' value='See Prices'>
-                                        </form>";
-                                    }
-                                    else
-                                    {
-                                        echo "<button class='ml20'>See Prices</button>
-                                        <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
-                                    }
+                                    echo "<button class='ml20'>See Prices</button>
+                                    <h6 class='inline'>NOT AVAILABLE RIGHT NOW 🙁</h6>";
                                 }
                             ?>
                         </div>

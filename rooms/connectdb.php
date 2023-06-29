@@ -31,11 +31,7 @@
             }
             $fprice=($p*80)/100;
 
-            $con=mysqli_connect("localhost","root","Abhi7674");
-            if(!$con)
-            {
-                die("Connection Error");
-            }
+            include '../database.php';
             mysqli_select_db($con,"PROJECT");
             while($lcv!=0)
             {

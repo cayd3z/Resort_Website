@@ -8,11 +8,7 @@
             $comment = $_POST["comment"];
             $room = $_POST["room"];
 
-            $con=mysqli_connect("localhost","root","Abhi7674");
-            if(!$con)
-            {
-                die("Connection Error");
-            }
+            include '../database.php';
             mysqli_select_db($con,"PROJECT");
             $result = mysqli_query($con,"INSERT INTO reviews VALUES('$name','$rel','$country','$about','$comment','$room');");
             mysqli_close($con);
