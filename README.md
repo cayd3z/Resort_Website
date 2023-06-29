@@ -1,4 +1,4 @@
-# MINOR_PROJECT
+# MINOR PROJECT
 # Version 1.1.2
 
 Resort Website Using HTML, CSS, JavaScript, PHP And MySQL
