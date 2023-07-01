@@ -15,7 +15,7 @@ Admin page (dashboard) where admin can only see. Username and password are neede
 	ADMIN PAGE LINK --> http://localhost/MINOR_PROJECT/admin.html
 
 	USERNAME AND PASSWORD OF DASHBORD
-	-------------------------------------
+	---------------------------------
 	USERNAME --> admin
 	PASSWORD --> password
 
