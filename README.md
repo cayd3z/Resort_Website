@@ -8,11 +8,11 @@ Resort Website Using HTML, CSS, JavaScript, PHP And MySQL
 ------------
 Public Website for Visitors where visitors can see the facilities, rooms, reviews, location, and policies of the resort. More than that, they can book rooms and add their reviews about the resort.
 
-	PUBLIC WEBSITE LINK --> http://localhost/MINOR_PROJECT/
+	[PUBLIC WEBSITE LINK --> ](http://localhost/MINOR_PROJECT/)
 
 Admin page (dashboard) where admin can only see. Username and password are needed to log in to the dashboard. They are given below. In the dashboard, admin can see the details of all staffs, the status of rooms, reviews, and the number of visitors visiting the public website of the resort.
 
-	ADMIN PAGE LINK --> http://localhost/MINOR_PROJECT/admin.html
+	[ADMIN PAGE LINK --> ](http://localhost/MINOR_PROJECT/admin.html)
 
 	USERNAME AND PASSWORD OF DASHBORD
 	-------------------------------------
@@ -42,10 +42,10 @@ Admin page (dashboard) where admin can only see. Username and password are neede
 		
 	**• LOGIN TO DASHBOARD**
 	
-		DASHBOARD LINK --> http://localhost/MINOR_PROJECT/admin.html
+		[DASHBOARD LINK --> ](http://localhost/MINOR_PROJECT/admin.html)
 
 	**• EXECUTE setup.php**
 	
-		SETUP LINK --> http://localhost/MINOR_PROJECT/admin/settings/setup.php
+		[SETUP LINK --> ](http://localhost/MINOR_PROJECT/admin/settings/setup.php)
 
 4. The last step is to set our database details. In this step, you need to open the source code with any editor software and set your hostname, username, and password in database.php.
