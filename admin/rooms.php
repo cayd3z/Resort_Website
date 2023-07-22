@@ -34,14 +34,14 @@
                 <table cellpadding="40" style="margin-left: 200px;">
                     <tr>
                         <th class="subdiv">
-                            <a href="./rooms/seaside_villa.php">
+                            <a href="./rooms/status.php?room=1">
                             <img src="../Images/Ro_I1.jpg" class="divset1"><br>
                             <h3>Seaside Villa</h3>
                             </a>
                         </th>
                         <th width="100px"></th>
                         <th class="subdiv">
-                            <a href="./rooms/garden_view_room.php">
+                            <a href="./rooms/status.php?room=2">
                             <img src="../Images/Ro_I2.jpg" class="divset1">
                             <h3>Garden View Rooms</h3>
                             </a>
@@ -50,14 +50,14 @@
                     <tr height="80px"></tr>
                     <tr>
                         <th class="subdiv">
-                            <a href="./rooms/deluxe_double_room.php">
+                            <a href="./rooms/status.php?room=3">
                             <img src="../Images/Ro_I3.jpg" class="divset1">
                             <h3>Deluxe Double Room</h3>
                             </a>
                         </th>
                         <th></th>
                         <th class="subdiv">
-                            <a href="./rooms/standard_room.php">
+                            <a href="./rooms/status.php?room=4">
                             <img src="../Images/Ro_I4.jpg" class="divset1">
                             <h3>Standard Room</h3>
                             </a>

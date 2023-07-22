@@ -1,6 +1,33 @@
 <html>
     <head>
-        <title>DELUXE DOUBLE ROOM</title>
+        <?php
+            $room_type = $_GET['room'];
+            switch ($room_type) {
+                case 1:
+                    $room_name = "SEASIDE VILLA";
+                    $table_name = "seaside_villa";
+                    break;
+                case 2:
+                    $room_name = "GARDEN VIEW ROOM";
+                    $table_name = "garden_view_room";
+                    break;
+                case 3:
+                    $room_name = "DELUXE DOUBLE ROOM";
+                    $table_name = "deluxe_double_room";
+                    break;
+                case 4:
+                    $room_name = "STANDARD ROOM";
+                    $table_name = "standard_room";
+                    break;
+                default:
+                    echo "<script>
+                        alert('Don\\'t mess with the URL !');
+                        location.href='../rooms.php';
+                    </script>";
+                    break;
+            }
+            echo"<title>$room_name</title>";
+        ?>
         <link rel="stylesheet" href="../../Resort.css">
         <?php
             session_start();
@@ -18,7 +45,7 @@
                 $room = $_POST['room'];
                 include '../../database.php';
                 mysqli_select_db($con,"PROJECT");
-                $result = mysqli_query($con,"UPDATE deluxe_double_room SET fn=NULL,ln=NULL,gender=NULL,pno=NULL,email=NULL,address=NULL,pin=NULL,adults=NULL,children=NULL,price=NULL WHERE rno='$room';");
+                $result = mysqli_query($con,"UPDATE $table_name SET fn=NULL,ln=NULL,gender=NULL,pno=NULL,email=NULL,address=NULL,pin=NULL,adults=NULL,children=NULL,price=NULL WHERE rno='$room';");
                 mysqli_close($con);
                 echo "<script>alert('Successfully Evacuated');</script>";
             }
@@ -33,7 +60,7 @@
             <tr>
                 <th>
                 <?php
-                    $qry="SELECT * FROM deluxe_double_room";
+                    $qry="SELECT * FROM $table_name";
                     include '../../database.php';
                     mysqli_select_db($con,"PROJECT");
                     $result = mysqli_query($con,$qry);
@@ -73,7 +100,7 @@
                     <h1><u>Vacate  Room</u></h1>
                     <form action="" method="post">
                     <?php
-                        $qry="SELECT rno FROM deluxe_double_room WHERE fn IS NOT NULL";
+                        $qry="SELECT rno FROM $table_name WHERE fn IS NOT NULL";
                         $lcv=0;
                         include '../../database.php';
                         mysqli_select_db($con,"PROJECT");
