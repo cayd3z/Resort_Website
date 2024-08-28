@@ -1,4 +1,4 @@
-# Resort Website
+# Resort Website (For Beginners)
 ## Version 1.2.5
 
 A Simple Model of a Resort Website Using HTML, CSS, JavaScript, PHP And MySQL
