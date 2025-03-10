@@ -8,7 +8,7 @@ A Simple Model of a Resort Website Using HTML, CSS, JavaScript, PHP And MySQL
 ------------
 Public Website for Visitors where visitors can see the facilities, rooms, reviews, location, and policies of the resort. More than that, they can book rooms and add their reviews about the resort.
 
-	PUBLIC WEBSITE LINK --> http://localhost/MINOR_PROJECT/
+	PUBLIC WEBSITE LINK --> http://localhost/Resort_Website/
 
 Admin page (dashboard) where admin can only see. Username and password are needed to log in to the dashboard. They are given below. In the dashboard, admin can see the details of all staffs, the status of rooms, reviews, and the number of visitors visiting the public website of the resort.
 
